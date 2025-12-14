@@ -21,8 +21,9 @@ This repository contains the performance simulator and accuracy evaluation code 
     - [A. Run All Experiments](#a-run-all-experiments)
     - [B. Running Individual Experiments](#b-running-individual-experiments)
   - [3.2. NVIDIA RTX Server](#32-nvidia-rtx-server)
-    - [A. Run All Experiments](#a-run-all-experiments-1)
-    - [B. Running Individual Experiments](#b-running-individual-experiments-1)
+    - [A. Set Up the Environment](#a-set-up-the-environment-2)
+    - [B. Run All Experiments](#b-run-all-experiments)
+    - [C. Running Individual Experiments](#c-running-individual-experiments)
 - [4. Generate Figures](#4-generate-figures)
   - [4.1. Package Results](#41-package-results)
     - [A. Compressing Orin Results](#a-compressing-orin-results)
@@ -159,7 +160,23 @@ cd /workspace/script/chapter6_evaluation/figure_15
 
 ### 3.2. NVIDIA RTX Server
 
-#### A. Run All Experiments
+#### A. Set Up the Environment
+
+```bash
+cd /workspace/script
+vim ./env.sh
+```
+
+In env.sh, replace GPU with the GPU index you want to use:
+
+```bash
+DATASET_PATH=/mnt/dataset       # Don't touch
+MODEL_PATH=/mnt/model           # Don't touch
+OUTPUT_PATH=/mnt/output         # Don't touch
+CUDA_VISIBLE_DEVICES={GPU}      # GPU Index
+```
+
+#### B. Run All Experiments
 
 Run every RTX/server experiment end-to-end, including profiling and accuracy sweeps:
 
@@ -168,7 +185,7 @@ cd /workspace/script
 ./server_run.sh
 ```
 
-#### B. Running Individual Experiments
+#### C. Running Individual Experiments
 
 You can also reproduce each experiment independently. Each figure directory contains the exact scripts and configs used for that plot or table.
 
