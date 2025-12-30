@@ -44,6 +44,7 @@ apt install libgl1 -y
 pip install plyfile --index-url $INDEX_URL
 pip install joblib --index-url $INDEX_URL
 pip install matplotlib --index-url $INDEX_URL
+pip install gdown --index-url $INDEX_URL
 
 # Install Original Gaussian Splatting Packages
 cd /workspace/src/app/gaussian_splatting/gaussian_splatting_frontend

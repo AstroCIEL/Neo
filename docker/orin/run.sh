@@ -18,7 +18,7 @@ docker run -dit \
     --privileged \
     --gpus all \
     --runtime nvidia \
-    --net host \
+    --network host \
     --ipc host \
     --cap-add=SYS_ADMIN \
     --security-opt seccomp=unconfined \
